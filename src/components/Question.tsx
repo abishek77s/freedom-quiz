@@ -112,7 +112,7 @@ const Question = () => {
     }
   };
 
-  const handleOptionClick = (type: string, optionText: string) => {
+  const handleOptionClick = (type: string) => {
     setSelectedOption(type);
     setUserResponses([...userResponses, type]);
   };
@@ -147,7 +147,7 @@ const Question = () => {
         <div className="text-center">
           <h2>Thanks for completing the quiz!</h2>
           <img
-            src="src\assets\ind.jpg"
+            src="src/assets/ind.jpg"
             alt="Completion"
             className="img-fluid mt-4"
           />
@@ -167,9 +167,7 @@ const Question = () => {
                 className={`option p-2 mb-2 cursor-pointer ${
                   selectedOption === currentQuestion.type1 ? "selected" : ""
                 }`}
-                onClick={() =>
-                  handleOptionClick(currentQuestion.type1, currentQuestion.o1)
-                }
+                onClick={() => handleOptionClick(currentQuestion.type1)}
               >
                 {currentQuestion.o1}
               </div>
@@ -177,9 +175,7 @@ const Question = () => {
                 className={`option p-2 cursor-pointer ${
                   selectedOption === currentQuestion.type2 ? "selected" : ""
                 }`}
-                onClick={() =>
-                  handleOptionClick(currentQuestion.type2, currentQuestion.o2)
-                }
+                onClick={() => handleOptionClick(currentQuestion.type2)}
               >
                 {currentQuestion.o2}
               </div>
